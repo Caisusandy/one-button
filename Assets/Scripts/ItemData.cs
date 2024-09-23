@@ -10,7 +10,14 @@ namespace OneButton
     public class ItemData : ScriptableObject
     {
         public string itemName;
+        /// <summary>
+        /// price of the item (buying price)
+        /// </summary>
         public int price;
+        /// <summary>
+        /// score value
+        /// </summary>
+        public int value;
         public Sprite icon;
 
         public string description;
