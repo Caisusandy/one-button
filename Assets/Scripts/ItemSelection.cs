@@ -1,67 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ItemSelection : MonoBehaviour
+namespace OneButton
 {
-    public bool isItem1;
-    public bool isItem2;
-    public bool isSkip;
-    private bool item1_selected = true;
-    private bool item2_selected = false;
-    private bool skip_selected = false;
-    private Renderer renderer;
-
-    // Start is called before the first frame update
-    void Start()
+    public class ItemSelection : MonoBehaviour
     {
-        renderer = GetComponent<Renderer>();
+        public Image image;
+        public TMP_Text nameText;
+        public int id;
 
-        ShowSelected();
-    }
+        //public bool isItem1;
+        //public bool isItem2;
+        //public bool isSkip;
+        //private bool item1_selected = true;
+        //private bool item2_selected = false;
+        //private bool skip_selected = false; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyUp("space"))
+        public void Setup(ItemData item)
         {
-            if (item1_selected)
+            image.sprite = item.icon;
+            nameText.text = item.name;
+        }
+
+        public void Toggle(int currentSelection)
+        {
+            if (currentSelection == id)
             {
-                item1_selected = false;
-                item2_selected = true;
+                image.color = Color.cyan;
             }
-            else if (item2_selected)
+            else
             {
-                skip_selected = true;
-                item2_selected = false;
+                image.color = Color.gray;
             }
-            else if (skip_selected)
-            {
-                skip_selected = false;
-                item1_selected = true;
-            }
+        }
 
-            ShowSelected();
-        }
-    }
-
-    void ShowSelected()
-    {
-        if (item1_selected && isItem1)
-        {
-            renderer.material.color = Color.cyan;
-        }
-        else if (item2_selected && isItem2)
-        {
-            renderer.material.color = Color.cyan;
-        }
-        else if (skip_selected && isSkip)
-        {
-            renderer.material.color = Color.cyan;
-        }
-        else
-        {
-            renderer.material.color = Color.gray;
-        }
+        //void ShowSelected()
+        //{
+        //    if (item1_selected && isItem1)
+        //    {
+        //        image.color = Color.cyan;
+        //    }
+        //    else if (item2_selected && isItem2)
+        //    {
+        //        image.color = Color.cyan;
+        //    }
+        //    else if (skip_selected && isSkip)
+        //    {
+        //        image.color = Color.cyan;
+        //    }
+        //    else
+        //    {
+        //        image.color = Color.gray;
+        //    }
+        //}
     }
 }
