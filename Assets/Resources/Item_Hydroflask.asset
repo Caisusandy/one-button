@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Hydroflask
   price: 20
   score: 3
-  icon: {fileID: 0}
+  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

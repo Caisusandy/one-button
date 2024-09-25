@@ -11,6 +11,8 @@ namespace OneButton
         public TMP_Text nameText;
         public int id;
 
+        public Color selectColor;
+        public Color unselectColor;
         //public bool isItem1;
         //public bool isItem2;
         //public bool isSkip;
@@ -28,11 +30,11 @@ namespace OneButton
         {
             if (currentSelection == id)
             {
-                image.color = Color.cyan;
+                image.color = selectColor;
             }
             else
             {
-                image.color = Color.gray;
+                image.color = unselectColor;
             }
         }
 

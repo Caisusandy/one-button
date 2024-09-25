@@ -8,6 +8,8 @@ namespace OneButton
     /// </summary>
     public class GameManager : MonoBehaviour
     {
+        public static GameManager instance;
+
         public float startTime;
         public float decreasing;
 
@@ -18,6 +20,8 @@ namespace OneButton
         public ItemCollections collections;
         public ItemSelectionController selectionController;
 
+        public GameObject optionsParent;
+
         [Header("Stat")]
         public int turn;
         public float currentMoney;
@@ -25,6 +29,13 @@ namespace OneButton
         public float currentStartTime;
         public float timer;
         private SelectionPair currentPair;
+
+        public bool isEndGame => turn >= collections.items.Count;
+
+        private void Awake()
+        {
+            instance = this;
+        }
 
         private void Start()
         {
@@ -38,9 +49,10 @@ namespace OneButton
         private void Update()
         {
             // end already
-            if (turn >= collections.items.Count)
+            if (isEndGame)
             {
                 timerText.text = $"End";
+                optionsParent.SetActive(false);
                 return;
             }
 
