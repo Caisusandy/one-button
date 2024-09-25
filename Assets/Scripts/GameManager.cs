@@ -28,8 +28,10 @@ namespace OneButton
 
         private void Start()
         {
+            currentMoney = startMoney;
             currentStartTime = startTime;
             timer = currentStartTime;
+            turn = 0;
             Setup();
         }
 
@@ -38,12 +40,13 @@ namespace OneButton
             // end already
             if (turn >= collections.items.Count)
             {
-                timerText.text = "0";
+                timerText.text = $"End";
+                return;
             }
-            timer -= Time.deltaTime;
-            // format of timer
-            timerText.text = $"Time: {timer}s";
 
+            UpdateDisplay();
+
+            timer -= Time.deltaTime;
             if (timer < 0)
             {
                 // check end turn
@@ -85,11 +88,18 @@ namespace OneButton
                     // selection of nothing
                     break;
             }
-            // update ui
-            moneyText.text = "Money: " + currentMoney.ToString();
-            scoreText.text = "Score: " + currentScore.ToString();
+            UpdateDisplay();
             // trigger something
             turn++;
+        }
+
+        private void UpdateDisplay()
+        {
+            // update ui
+            moneyText.text = "Money: $" + currentMoney.ToString();
+            scoreText.text = "Score: " + currentScore.ToString();
+            // format of timer
+            timerText.text = $"Time: {timer}s";
         }
     }
 }
