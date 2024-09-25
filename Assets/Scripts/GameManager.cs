@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace OneButton
 {
@@ -10,7 +11,10 @@ namespace OneButton
         public float startTime;
         public float decreasing;
 
-        public float startPrice;
+        public float startMoney;
+        public TMP_Text moneyText;
+        public TMP_Text scoreText;
+        public TMP_Text timerText;
         public ItemCollections collections;
         public ItemSelectionController selectionController;
 
@@ -20,17 +24,26 @@ namespace OneButton
         public int currentScore;
         public float currentStartTime;
         public float timer;
-
+        private SelectionPair currentPair;
 
         private void Start()
         {
             currentStartTime = startTime;
             timer = currentStartTime;
+            Setup();
         }
 
         private void Update()
         {
+            // end already
+            if (turn >= collections.items.Count)
+            {
+                timerText.text = "0";
+            }
             timer -= Time.deltaTime;
+            // format of timer
+            timerText.text = $"Time: {timer}s";
+
             if (timer < 0)
             {
                 // check end turn
@@ -44,13 +57,37 @@ namespace OneButton
 
         public void Setup()
         {
+            // go far away, end the turn
+            if (turn >= collections.items.Count)
+            {
+                return;
+            }
+
             // change this in the future
-            var pair = collections.items[turn];
-            selectionController.Setup(pair);
+            currentPair = collections.items[turn];
+            selectionController.Setup(currentPair);
         }
 
         public void CheckSelection()
         {
+            int selection = selectionController.selection;
+            switch (selection)
+            {
+                case 0:
+                    currentMoney -= currentPair.first.price;
+                    currentScore += currentPair.first.score;
+                    break;
+                case 1:
+                    currentMoney -= currentPair.second.price;
+                    currentScore += currentPair.second.score;
+                    break;
+                default:
+                    // selection of nothing
+                    break;
+            }
+            // update ui
+            moneyText.text = "Money: " + currentMoney.ToString();
+            scoreText.text = "Score: " + currentScore.ToString();
             // trigger something
             turn++;
         }

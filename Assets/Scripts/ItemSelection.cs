@@ -21,7 +21,7 @@ namespace OneButton
         public void Setup(ItemData item)
         {
             image.sprite = item.icon;
-            nameText.text = item.name;
+            nameText.text = item.itemName;
         }
 
         public void Toggle(int currentSelection)

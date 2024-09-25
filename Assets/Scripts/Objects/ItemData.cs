@@ -17,9 +17,10 @@ namespace OneButton
         /// <summary>
         /// score value
         /// </summary>
-        public int value;
+        public int score;
         public Sprite icon;
 
-        public string description;
+        // no need for this yet
+        //public string description;
     }
 }

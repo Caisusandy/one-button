@@ -14,7 +14,7 @@ namespace OneButton
         internal void Setup(SelectionPair pair)
         {
             selections[0].Setup(pair.first);
-
+            selections[1].Setup(pair.second);
         }
 
         private void Start()
@@ -26,10 +26,15 @@ namespace OneButton
         {
             if (Input.GetKeyUp("space"))
             {
-                selection++;
-                if (selection >= 3) selection = 0;
-                UpdateSelections();
+                MoveNext();
             }
+        }
+
+        public void MoveNext()
+        {
+            selection++;
+            if (selection >= 3) selection = 0;
+            UpdateSelections();
         }
 
         private void UpdateSelections()

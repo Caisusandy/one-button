@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 32
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -186,10 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 7407918398183626052}
+  nameText: {fileID: 4354723060044915394}
   id: 0
-  isItem1: 0
-  isItem2: 1
-  isSkip: 0
 --- !u!222 &3499947400174384329
 CanvasRenderer:
   m_ObjectHideFlags: 0
