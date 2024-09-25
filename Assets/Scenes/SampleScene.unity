@@ -539,6 +539,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 7407918398183626052, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7561658043041880566, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
       propertyPath: m_Name
       value: Item_Icon
@@ -1581,6 +1585,10 @@ PrefabInstance:
     - target: {fileID: 3233640854656101498, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
       propertyPath: id
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407918398183626052, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7561658043041880566, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
       propertyPath: m_Name

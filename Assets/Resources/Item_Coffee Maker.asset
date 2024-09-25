@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2437da141f573414a8f124c0d6164679, type: 3}
-  m_Name: Item_Notebook
+  m_Name: Item_Coffee Maker
   m_EditorClassIdentifier: 
-  itemName: NoteBook
-  price: 10
-  score: 2
-  icon: {fileID: 21300000, guid: a75482848a474dc4ebe249cb8958b8fd, type: 3}
+  itemName: Coffee Maker
+  price: 300
+  score: 7
+  icon: {fileID: 21300000, guid: e1751516b55a21445a03a4f0b770cf7f, type: 3}

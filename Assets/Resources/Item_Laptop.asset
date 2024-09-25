@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2437da141f573414a8f124c0d6164679, type: 3}
-  m_Name: Item_Notebook
+  m_Name: Item_Laptop
   m_EditorClassIdentifier: 
-  itemName: NoteBook
-  price: 10
-  score: 2
-  icon: {fileID: 21300000, guid: a75482848a474dc4ebe249cb8958b8fd, type: 3}
+  itemName: Laptop
+  price: 700
+  score: 6
+  icon: {fileID: 21300000, guid: 1b8ae60b68b96874fab58a26a3940ac0, type: 3}
