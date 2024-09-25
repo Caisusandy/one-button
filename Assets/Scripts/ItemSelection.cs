@@ -1,13 +1,16 @@
-using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace OneButton
 {
+
     public class ItemSelection : MonoBehaviour
     {
+        public ItemData itemData;
         public Image image;
+        public Image bg;
         public TMP_Text nameText;
         public int id;
 
@@ -22,19 +25,21 @@ namespace OneButton
 
         public void Setup(ItemData item)
         {
+            itemData = item;
             image.sprite = item.icon;
             nameText.text = item.itemName;
+            nameText.text += string.Join('\n', item.descriptions.Select(s => $"- {s}"));
         }
 
         public void Toggle(int currentSelection)
         {
             if (currentSelection == id)
             {
-                image.color = selectColor;
+                bg.color = selectColor;
             }
             else
             {
-                image.color = unselectColor;
+                bg.color = unselectColor;
             }
         }
 

@@ -44,5 +44,15 @@ namespace OneButton
                 item.Toggle(selection);
             }
         }
+
+        public void CheckSelection(float currentMoney)
+        {
+            // the skip option
+            if (CurrentSelection.itemData == null) return;
+            while (CurrentSelection.itemData && CurrentSelection.itemData.price > currentMoney)
+            {
+                selection++;
+            }
+        }
     }
 }

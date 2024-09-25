@@ -21,6 +21,6 @@ namespace OneButton
         public Sprite icon;
 
         // no need for this yet
-        //public string description;
+        public string[] descriptions;
     }
 }

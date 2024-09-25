@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 namespace OneButton
@@ -14,6 +15,7 @@ namespace OneButton
         public float decreasing;
 
         public float startMoney;
+        public float salary;
         public TMP_Text moneyText;
         public TMP_Text scoreText;
         public TMP_Text timerText;
@@ -21,6 +23,7 @@ namespace OneButton
         public ItemSelectionController selectionController;
 
         public GameObject optionsParent;
+        public GameObject salaryPrefab;
 
         [Header("Stat")]
         public int turn;
@@ -29,6 +32,8 @@ namespace OneButton
         public float currentStartTime;
         public float timer;
         private SelectionPair currentPair;
+        [Header("End Game")]
+        public float endGameDuration;
 
         public bool isEndGame => turn >= collections.items.Count;
 
@@ -39,11 +44,7 @@ namespace OneButton
 
         private void Start()
         {
-            currentMoney = startMoney;
-            currentStartTime = startTime;
-            timer = currentStartTime;
-            turn = 0;
-            Setup();
+            ResetGame();
         }
 
         private void Update()
@@ -51,11 +52,17 @@ namespace OneButton
             // end already
             if (isEndGame)
             {
+                endGameDuration += Time.deltaTime;
                 timerText.text = $"End";
                 optionsParent.SetActive(false);
+                if (endGameDuration > 3 && Input.GetKeyUp("space"))
+                    ResetGame();
                 return;
             }
 
+            // update validity of selection
+            selectionController.CheckSelection(currentMoney);
+            // display update
             UpdateDisplay();
 
             timer -= Time.deltaTime;
@@ -70,6 +77,17 @@ namespace OneButton
             }
         }
 
+        public void ResetGame()
+        {
+            optionsParent.SetActive(true);
+            endGameDuration = 0;
+            currentMoney = startMoney;
+            currentStartTime = startTime;
+            timer = currentStartTime;
+            turn = 0;
+            Setup();
+        }
+
         public void Setup()
         {
             // go far away, end the turn
@@ -81,6 +99,10 @@ namespace OneButton
             // change this in the future
             currentPair = collections.items[turn];
             selectionController.Setup(currentPair);
+
+            float salary1 = salary;
+            currentMoney += salary1;
+            ShowMoneyGain(salary1);
         }
 
         public void CheckSelection()
@@ -91,10 +113,12 @@ namespace OneButton
                 case 0:
                     currentMoney -= currentPair.first.price;
                     currentScore += currentPair.first.score;
+                    ShowScoreGain(currentPair.first.score);
                     break;
                 case 1:
                     currentMoney -= currentPair.second.price;
                     currentScore += currentPair.second.score;
+                    ShowScoreGain(currentPair.second.score);
                     break;
                 default:
                     // selection of nothing
@@ -108,10 +132,34 @@ namespace OneButton
         private void UpdateDisplay()
         {
             // update ui
-            moneyText.text = "Money: $" + currentMoney.ToString();
-            scoreText.text = "Score: " + currentScore.ToString();
+            moneyText.text = $"Money: ${currentMoney}";
+            scoreText.text = $"Score: {currentScore}";
             // format of timer
-            timerText.text = $"Time: {timer}s";
+            timerText.text = $"Time: {timer:f2}s";
+        }
+
+        private TMP_Text CreateText()
+        {
+            var newInstance = Instantiate(salaryPrefab);
+            newInstance.transform.SetParent(transform);
+            TMP_Text tMP_Text = newInstance.GetComponent<TMP_Text>();
+            return tMP_Text;
+        }
+
+        private async void ShowScoreGain(float score)
+        {
+            await Task.Yield();
+            TMP_Text tMP_Text = CreateText();
+            tMP_Text.transform.position = scoreText.transform.position + new Vector3(100f, 0, 0);
+            tMP_Text.text = $"+ {score}";
+        }
+
+        private async void ShowMoneyGain(float salary1)
+        {
+            await Task.Yield();
+            TMP_Text tMP_Text = CreateText();
+            tMP_Text.transform.position = moneyText.transform.position + new Vector3(100f, 0, 0);
+            tMP_Text.text = $"+ ${salary1}";
         }
     }
 }
