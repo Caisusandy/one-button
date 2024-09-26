@@ -30,15 +30,15 @@ namespace OneButton
                 StringBuilder stringBuilder = new StringBuilder();
                 if (happiness != 0)
                 {
-                    stringBuilder.Append(Sign(happiness) + " Happiness");
+                    stringBuilder.AppendLine(Sign(happiness) + " Happiness");
                 }
                 if (physicalHealth != 0)
                 {
-                    stringBuilder.Append(Sign(physicalHealth) + " Physical Health");
+                    stringBuilder.AppendLine(Sign(physicalHealth) + " Physical Health");
                 }
                 if (mentalHealth != 0)
                 {
-                    stringBuilder.Append(Sign(mentalHealth) + " Mental Health");
+                    stringBuilder.AppendLine(Sign(mentalHealth) + " Mental Health");
                 }
                 return stringBuilder.ToString();
             }

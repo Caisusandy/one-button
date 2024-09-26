@@ -1,9 +1,17 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
 namespace OneButton
 {
+    [Serializable]
+    public class Score
+    {
+        public int h;
+        public int m;
+        public int p;
+    }
     /// <summary>
     /// Use this class to initialize the game and start the game
     /// </summary>
@@ -17,7 +25,7 @@ namespace OneButton
         public float startMoney;
         public float salary;
         public TMP_Text moneyText;
-        public TMP_Text scoreText;
+        //public TMP_Text scoreText;
         public TMP_Text timerText;
         public ItemCollections collections;
         public ItemSelectionController selectionController;
@@ -28,14 +36,14 @@ namespace OneButton
         [Header("Stat")]
         public int turn;
         public float currentMoney;
-        public int currentScore;
+        public Score score;
         public float currentStartTime;
         public float timer;
         private SelectionPair currentPair;
         [Header("End Game")]
+        public bool isEndGame;
         public float endGameDuration;
 
-        public bool isEndGame => turn >= collections.items.Count;
 
         private void Awake()
         {
@@ -97,7 +105,7 @@ namespace OneButton
             }
 
             // change this in the future
-            currentPair = collections.items[turn];
+            currentPair = collections.GetSelectionPair();
             selectionController.Setup(currentPair);
 
             float salary1 = salary;
@@ -112,13 +120,17 @@ namespace OneButton
             {
                 case 0:
                     currentMoney -= currentPair.first.price;
-                    currentScore += currentPair.first.happiness;
-                    ShowScoreGain(currentPair.first.happiness);
+                    score.h += currentPair.first.happiness;
+                    score.p += currentPair.first.physicalHealth;
+                    score.m += currentPair.first.mentalHealth;
+                    //ShowScoreGain(currentPair.first.happiness);
                     break;
                 case 1:
                     currentMoney -= currentPair.second.price;
-                    currentScore += currentPair.second.happiness;
-                    ShowScoreGain(currentPair.second.happiness);
+                    score.h += currentPair.second.happiness;
+                    score.p += currentPair.second.physicalHealth;
+                    score.m += currentPair.second.mentalHealth;
+                    //ShowScoreGain(currentPair.second.happiness);
                     break;
                 default:
                     // selection of nothing
@@ -133,7 +145,7 @@ namespace OneButton
         {
             // update ui
             moneyText.text = $"Money: ${currentMoney}";
-            scoreText.text = $"Score: {currentScore}";
+            //scoreText.text = $"Score: {currentScore}";
             // format of timer
             timerText.text = $"Time: {timer:f2}s";
         }
@@ -146,13 +158,13 @@ namespace OneButton
             return tMP_Text;
         }
 
-        private async void ShowScoreGain(float score)
-        {
-            await Task.Yield();
-            TMP_Text tMP_Text = CreateText();
-            tMP_Text.transform.position = scoreText.transform.position + new Vector3(100f, 0, 0);
-            tMP_Text.text = $"+ {score}";
-        }
+        //private async void ShowScoreGain(float score)
+        //{
+        //    await Task.Yield();
+        //    TMP_Text tMP_Text = CreateText();
+        //    tMP_Text.transform.position = scoreText.transform.position + new Vector3(100f, 0, 0);
+        //    tMP_Text.text = $"+ {score}";
+        //}
 
         private async void ShowMoneyGain(float salary1)
         {
