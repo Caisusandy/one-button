@@ -112,13 +112,13 @@ namespace OneButton
             {
                 case 0:
                     currentMoney -= currentPair.first.price;
-                    currentScore += currentPair.first.score;
-                    ShowScoreGain(currentPair.first.score);
+                    currentScore += currentPair.first.happiness;
+                    ShowScoreGain(currentPair.first.happiness);
                     break;
                 case 1:
                     currentMoney -= currentPair.second.price;
-                    currentScore += currentPair.second.score;
-                    ShowScoreGain(currentPair.second.score);
+                    currentScore += currentPair.second.happiness;
+                    ShowScoreGain(currentPair.second.happiness);
                     break;
                 default:
                     // selection of nothing

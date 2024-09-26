@@ -28,7 +28,7 @@ namespace OneButton
             itemData = item;
             image.sprite = item.icon;
             nameText.text = item.itemName;
-            nameText.text += string.Join('\n', item.descriptions.Select(s => $"- {s}"));
+            nameText.text += item.Description;
         }
 
         public void Toggle(int currentSelection)
