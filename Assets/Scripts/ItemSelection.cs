@@ -36,10 +36,12 @@ namespace OneButton
             if (currentSelection == id)
             {
                 bg.color = selectColor;
+                bg.enabled = true;
             }
             else
             {
                 bg.color = unselectColor;
+                bg.enabled = false;
             }
         }
 

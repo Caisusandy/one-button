@@ -1,17 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
 namespace OneButton
 {
-    [Serializable]
-    public class Score
-    {
-        public int h;
-        public int m;
-        public int p;
-    }
     /// <summary>
     /// Use this class to initialize the game and start the game
     /// </summary>
@@ -21,11 +13,12 @@ namespace OneButton
 
         public float startTime;
         public float decreasing;
+        public float minTime;
 
         public float startMoney;
         public float salary;
         public TMP_Text moneyText;
-        //public TMP_Text scoreText;
+        public TMP_Text scoreText;
         public TMP_Text timerText;
         public ItemCollections collections;
         public ItemSelectionController selectionController;
@@ -68,8 +61,6 @@ namespace OneButton
                 return;
             }
 
-            // update validity of selection
-            selectionController.CheckSelection(currentMoney);
             // display update
             UpdateDisplay();
 
@@ -78,7 +69,10 @@ namespace OneButton
             {
                 // check end turn
                 CheckSelection();
-                currentStartTime -= decreasing;
+                // check game end
+                CheckGameEnd();
+                // next turn setup
+                currentStartTime = Mathf.Max(minTime, currentStartTime - decreasing);
                 timer = currentStartTime;
                 // set up next turn
                 Setup();
@@ -87,19 +81,21 @@ namespace OneButton
 
         public void ResetGame()
         {
+            isEndGame = false;
             optionsParent.SetActive(true);
             endGameDuration = 0;
             currentMoney = startMoney;
             currentStartTime = startTime;
             timer = currentStartTime;
             turn = 0;
+            score = new Score();
             Setup();
         }
 
         public void Setup()
         {
             // go far away, end the turn
-            if (turn >= collections.items.Count)
+            if (isEndGame)
             {
                 return;
             }
@@ -141,11 +137,19 @@ namespace OneButton
             turn++;
         }
 
+        private void CheckGameEnd()
+        {
+            isEndGame = currentMoney < 0
+                        || score.h < 0
+                        || score.p < 0
+                        || score.m < 0;
+        }
+
         private void UpdateDisplay()
         {
             // update ui
             moneyText.text = $"Money: ${currentMoney}";
-            //scoreText.text = $"Score: {currentScore}";
+            scoreText.text = $"Score: {score}";
             // format of timer
             timerText.text = $"Time: {timer:f2}s";
         }

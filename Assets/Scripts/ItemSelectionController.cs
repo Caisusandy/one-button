@@ -33,7 +33,7 @@ namespace OneButton
         public void MoveNext()
         {
             selection++;
-            if (selection >= 3) selection = 0;
+            if (selection >= selections.Count) selection = 0;
             UpdateSelections();
         }
 
@@ -42,16 +42,6 @@ namespace OneButton
             foreach (var item in selections)
             {
                 item.Toggle(selection);
-            }
-        }
-
-        public void CheckSelection(float currentMoney)
-        {
-            // the skip option
-            if (CurrentSelection.itemData == null) return;
-            while (CurrentSelection.itemData && CurrentSelection.itemData.price > currentMoney)
-            {
-                selection++;
             }
         }
     }

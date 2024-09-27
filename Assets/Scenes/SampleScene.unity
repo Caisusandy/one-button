@@ -294,7 +294,6 @@ MonoBehaviour:
   selections:
   - {fileID: 1777114117}
   - {fileID: 1163078451}
-  - {fileID: 1095306432}
   selection: 0
 --- !u!1 &641708857
 GameObject:
@@ -414,8 +413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3338ec1c5a0b17640a75cf3a829592f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 8
-  decreasing: 0.75
+  startTime: 10
+  decreasing: 0.25
+  minTime: 5
   startMoney: 200
   salary: 200
   moneyText: {fileID: 1337941306}
@@ -427,9 +427,13 @@ MonoBehaviour:
   salaryPrefab: {fileID: 2293845068187794751, guid: 2956c2700211a964e9d03dddaf5c256f, type: 3}
   turn: 0
   currentMoney: 0
-  currentScore: 0
+  score:
+    h: 0
+    m: 0
+    p: 0
   currentStartTime: 0
   timer: 0
+  isEndGame: 0
   endGameDuration: 0
 --- !u!1 &856042708
 GameObject:
@@ -626,17 +630,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9215920379321969443, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
   m_PrefabInstance: {fileID: 1688408446}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1095306432 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3233640854656101498, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
-  m_PrefabInstance: {fileID: 1688408446}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d108b1faeee2fd4e86b8208f375edb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1163078447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9215920379321969443, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
@@ -1432,6 +1425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Icon
       objectReference: {fileID: 0}
+    - target: {fileID: 7561658043041880566, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8198207975852499354, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1620,10 +1617,6 @@ PrefabInstance:
         - Attributes
 
         - Attribute'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7407918398183626052, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
-      propertyPath: m_Sprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7561658043041880566, guid: fd51c4e3e98078449905a0ac56498024, type: 3}
       propertyPath: m_Name

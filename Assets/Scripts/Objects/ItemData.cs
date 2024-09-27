@@ -10,6 +10,8 @@ namespace OneButton
     [CreateAssetMenu(menuName = "Assets/Item Data")]
     public class ItemData : ScriptableObject
     {
+        public const int attributeSize = 24;
+
         public string itemName;
         public Sprite icon;
         /// <summary>
@@ -21,7 +23,6 @@ namespace OneButton
         public int happiness;
         public int physicalHealth;
         public int mentalHealth;
-
 
         public string Description
         {
@@ -40,6 +41,8 @@ namespace OneButton
                 {
                     stringBuilder.AppendLine(Sign(mentalHealth) + " Mental Health");
                 }
+                stringBuilder.Insert(0, $"<size={attributeSize}>");
+                stringBuilder.Append("</size>");
                 return stringBuilder.ToString();
             }
         }
