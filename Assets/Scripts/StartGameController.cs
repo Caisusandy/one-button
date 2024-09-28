@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace OneButton
 {
-    public class StartScreenController : MonoBehaviour
+    public class StartGameController : MonoBehaviour
     {
         private void Update()
         {
