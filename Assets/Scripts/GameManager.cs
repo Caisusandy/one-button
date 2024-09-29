@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OneButton
 {
@@ -25,6 +26,14 @@ namespace OneButton
 
         public GameObject optionsParent;
         public GameObject salaryPrefab;
+
+        public Image happinessSlider;
+        public Image mentalSlider;
+        public Image physicalSlider;
+
+        public TMP_Text happyScore;
+        public TMP_Text mentalScore;
+        public TMP_Text physicalScore;
 
         [Header("Stat")]
         public int turn;
@@ -56,7 +65,7 @@ namespace OneButton
                 endGameDuration += Time.deltaTime;
                 timerText.text = $"End";
                 optionsParent.SetActive(false);
-                if (endGameDuration > 3 && Input.GetKeyUp("space"))
+                if (endGameDuration > 3 && Input.GetKeyUp(KeyCode.Space))
                     ResetGame();
                 return;
             }
@@ -116,16 +125,16 @@ namespace OneButton
             {
                 case 0:
                     currentMoney -= currentPair.first.price;
-                    score.h += currentPair.first.happiness;
-                    score.p += currentPair.first.physicalHealth;
-                    score.m += currentPair.first.mentalHealth;
+                    score.Happiness += currentPair.first.happiness;
+                    score.Physical += currentPair.first.physicalHealth;
+                    score.Mental += currentPair.first.mentalHealth;
                     //ShowScoreGain(currentPair.first.happiness);
                     break;
                 case 1:
                     currentMoney -= currentPair.second.price;
-                    score.h += currentPair.second.happiness;
-                    score.p += currentPair.second.physicalHealth;
-                    score.m += currentPair.second.mentalHealth;
+                    score.Happiness += currentPair.second.happiness;
+                    score.Physical += currentPair.second.physicalHealth;
+                    score.Mental += currentPair.second.mentalHealth;
                     //ShowScoreGain(currentPair.second.happiness);
                     break;
                 default:
@@ -140,18 +149,26 @@ namespace OneButton
         private void CheckGameEnd()
         {
             isEndGame = currentMoney < 0
-                        || score.h < 0
-                        || score.p < 0
-                        || score.m < 0;
+                        || score.Happiness < 0
+                        || score.Physical < 0
+                        || score.Mental < 0;
         }
 
         private void UpdateDisplay()
         {
             // update ui
             moneyText.text = $"Money: ${currentMoney}";
-            scoreText.text = $"Score: {score}";
+            //scoreText.text = $"Score: {score}";
             // format of timer
             timerText.text = $"Time: {timer:f2}s";
+
+            happinessSlider.fillAmount = score.HappinessPercentage;
+            physicalSlider.fillAmount = score.PhysicalPercentage;
+            mentalSlider.fillAmount = score.MentalPercentage;
+
+            happyScore.text = $"Happiness {score.Happiness}";
+            mentalScore.text = $"Mental Health {score.Mental}";
+            physicalScore.text = $"Physical Health {score.Physical}";
         }
 
         private TMP_Text CreateText()

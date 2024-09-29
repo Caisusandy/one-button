@@ -24,7 +24,7 @@ namespace OneButton
 
         private void Update()
         {
-            if (!GameManager.instance.isEndGame && Input.GetKeyUp("space"))
+            if (!GameManager.instance.isEndGame && Input.GetKeyUp(KeyCode.Space))
             {
                 MoveNext();
             }

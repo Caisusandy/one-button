@@ -7,7 +7,7 @@ namespace OneButton
     {
         private void Update()
         {
-            if (Input.GetKeyUp("space"))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 StartGame();
             }

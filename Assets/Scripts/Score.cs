@@ -1,19 +1,32 @@
 ﻿using System;
+using UnityEngine;
 
 namespace OneButton
 {
     [Serializable]
     public class Score
     {
-        public const int DEFAULT = 50;
+        public const int DEFAULT = MAX / 2;
+        public const int MAX = 100;
+        public const float MAXF = MAX;
 
-        public int h = DEFAULT;
-        public int m = DEFAULT;
-        public int p = DEFAULT;
+        private int h = DEFAULT;
+        private int m = DEFAULT;
+        private int p = DEFAULT;
+
+
+
+        public int Happiness { get => h; set => h = Mathf.Min(MAX, value); }
+        public int Mental { get => m; set => m = Mathf.Min(MAX, value); }
+        public int Physical { get => p; set => p = Mathf.Min(MAX, value); }
+        public float PhysicalPercentage => p / MAXF;
+        public float MentalPercentage => m / MAXF;
+        public float HappinessPercentage => h / MAXF;
+
 
         public override string ToString()
         {
-            return $"{h} {m} {p}";
+            return $"{Happiness} {Mental} {Physical}";
         }
     }
 }
