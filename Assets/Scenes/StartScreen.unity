@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 174589025}
   - component: {fileID: 174589024}
   - component: {fileID: 174589023}
-  - component: {fileID: 174589022}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -142,40 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &174589022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174589021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3338ec1c5a0b17640a75cf3a829592f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 10
-  decreasing: 0.25
-  minTime: 5
-  startMoney: 200
-  salary: 200
-  moneyText: {fileID: 0}
-  scoreText: {fileID: 0}
-  timerText: {fileID: 0}
-  collections: {fileID: 11400000, guid: e61c0268519043040b6f303d5289c4a0, type: 2}
-  selectionController: {fileID: 0}
-  optionsParent: {fileID: 0}
-  salaryPrefab: {fileID: 2293845068187794751, guid: 2956c2700211a964e9d03dddaf5c256f, type: 3}
-  turn: 0
-  currentMoney: 0
-  score:
-    h: 0
-    m: 0
-    p: 0
-  currentStartTime: 0
-  timer: 0
-  isEndGame: 0
-  endGameDuration: 0
 --- !u!114 &174589023
 MonoBehaviour:
   m_ObjectHideFlags: 0

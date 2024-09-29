@@ -7,7 +7,7 @@ namespace OneButton
     {
         private void Update()
         {
-            if (!GameManager.instance.isEndGame && Input.GetKeyUp("space"))
+            if (Input.GetKeyUp("space"))
             {
                 StartGame();
             }

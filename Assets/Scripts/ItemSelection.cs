@@ -27,8 +27,7 @@ namespace OneButton
         {
             itemData = item;
             image.sprite = item.icon;
-            nameText.text = item.itemName;
-            nameText.text += item.Description;
+            nameText.text = $"{item.itemName}\n{item.Description}";
         }
 
         public void Toggle(int currentSelection)

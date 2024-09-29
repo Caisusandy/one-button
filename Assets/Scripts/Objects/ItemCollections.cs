@@ -10,7 +10,6 @@ namespace OneButton
     public class ItemCollections : ScriptableObject
     {
         public List<ItemData> data;
-        public List<SelectionPair> items;
 
         public SelectionPair GetSelectionPair()
         {
