@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace OneButton
@@ -152,6 +153,12 @@ namespace OneButton
                         || score.Happiness < 0
                         || score.Physical < 0
                         || score.Mental < 0;
+
+            if (isEndGame)
+            {
+                SceneManager.LoadScene("EndScreen");
+                EndScreenController.finalScore = score;
+            }
         }
 
         private void UpdateDisplay()
