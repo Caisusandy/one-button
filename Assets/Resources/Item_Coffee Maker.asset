@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Item_Coffee Maker
   m_EditorClassIdentifier: 
   itemName: Coffee Maker
-  price: 300
-  score: 7
   icon: {fileID: 21300000, guid: e1751516b55a21445a03a4f0b770cf7f, type: 3}
+  price: 200
+  happiness: 30
+  physicalHealth: -10
+  mentalHealth: -10
