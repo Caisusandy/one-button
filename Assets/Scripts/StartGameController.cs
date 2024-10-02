@@ -15,7 +15,7 @@ namespace OneButton
 
         public void StartGame()
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadSceneAsync("SampleScene");
         }
     }
 }

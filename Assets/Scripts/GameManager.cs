@@ -97,7 +97,7 @@ namespace OneButton
             currentMoney = startMoney;
             currentStartTime = startTime;
             timer = currentStartTime;
-            turn = 0;
+            turn = 1;
             score = new Score();
             Setup();
         }
@@ -114,9 +114,12 @@ namespace OneButton
             currentPair = collections.GetSelectionPair();
             selectionController.Setup(currentPair);
 
-            float salary1 = salary;
-            currentMoney += salary1;
-            ShowMoneyGain(salary1);
+            if (turn % 3 == 0)
+            {
+                float salary1 = salary;
+                currentMoney += salary1;
+                ShowMoneyGain(salary1);
+            }
         }
 
         public void CheckSelection()
