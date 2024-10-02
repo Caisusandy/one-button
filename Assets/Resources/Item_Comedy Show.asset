@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Comedy Show
   icon: {fileID: 21300000, guid: 492cc4c281adbdf469a26750e64642c0, type: 3}
   price: 30
-  happiness: 15
+  happiness: 5
   physicalHealth: 0
-  mentalHealth: 5
+  mentalHealth: 0

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Video Game
   icon: {fileID: 21300000, guid: 24927003aa0c10b459cc1d66121ba8fe, type: 3}
   price: 40
-  happiness: 20
-  physicalHealth: -15
+  happiness: 5
+  physicalHealth: -20
   mentalHealth: 0

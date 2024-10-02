@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Flowers
   icon: {fileID: 21300000, guid: 147625b570d55d6479d4edeee349b954, type: 3}
   price: 20
-  happiness: 5
-  physicalHealth: 5
-  mentalHealth: 0
+  happiness: 2
+  physicalHealth: 0
+  mentalHealth: 2

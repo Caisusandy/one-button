@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Dumbells
   icon: {fileID: 21300000, guid: bf7a6a8be1d1168459b418c53408635a, type: 3}
   price: 40
-  happiness: 0
+  happiness: -5
   physicalHealth: 25
-  mentalHealth: 0
+  mentalHealth: -5

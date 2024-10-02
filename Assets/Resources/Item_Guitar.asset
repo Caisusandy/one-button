@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Guitar
   icon: {fileID: 21300000, guid: 2f924b36fb923814aa005e0660536d8f, type: 3}
   price: 250
-  happiness: 10
+  happiness: 0
   physicalHealth: 0
-  mentalHealth: 35
+  mentalHealth: 10

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Herbal Teas
   icon: {fileID: 21300000, guid: cf1f53c4f19ffdd4183b779f5fb8a98d, type: 3}
   price: 20
-  happiness: 0
+  happiness: -5
   physicalHealth: 5
-  mentalHealth: 15
+  mentalHealth: 0

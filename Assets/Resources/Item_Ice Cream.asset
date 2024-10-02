@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Ice Cream
   icon: {fileID: 21300000, guid: 15ac91360bf987e49bbd5f95acfb53ed, type: 3}
   price: 5
-  happiness: 5
-  physicalHealth: -10
+  happiness: 1
+  physicalHealth: -5
   mentalHealth: 0

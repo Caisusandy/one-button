@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Medical Checkup
   icon: {fileID: 21300000, guid: 09fa967ca749f944cbcec773437c9923, type: 3}
   price: 150
-  happiness: 0
-  physicalHealth: 45
-  mentalHealth: 15
+  happiness: -10
+  physicalHealth: 15
+  mentalHealth: 0

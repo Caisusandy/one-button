@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Smartphone
   icon: {fileID: 21300000, guid: d6f4db3ea2642244aae388dabf4173c2, type: 3}
   price: 300
-  happiness: 50
-  physicalHealth: -20
-  mentalHealth: -15
+  happiness: 20
+  physicalHealth: -5
+  mentalHealth: -10

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Fitbit
   icon: {fileID: 21300000, guid: 41fa3663daa08f94fb2d99aaa066ae9a, type: 3}
   price: 200
-  happiness: 0
-  physicalHealth: 50
-  mentalHealth: -10
+  happiness: -10
+  physicalHealth: 15
+  mentalHealth: 0

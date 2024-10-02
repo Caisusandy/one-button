@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 25
   happiness: 0
   physicalHealth: 0
-  mentalHealth: 20
+  mentalHealth: 5

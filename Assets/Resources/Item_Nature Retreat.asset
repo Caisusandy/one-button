@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Nature Retreat
   icon: {fileID: 21300000, guid: 1215523e9e1a7d44c98242c1cae16c46, type: 3}
   price: 100
-  happiness: 5
-  physicalHealth: 15
-  mentalHealth: 35
+  happiness: -5
+  physicalHealth: 10
+  mentalHealth: 10

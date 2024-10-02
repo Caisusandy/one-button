@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Wine Tasting Experience
   icon: {fileID: 21300000, guid: d106041fdd6b74e4c86a1fc681b2efb9, type: 3}
   price: 90
-  happiness: 25
-  physicalHealth: -10
-  mentalHealth: 5
+  happiness: 7
+  physicalHealth: -15
+  mentalHealth: 3

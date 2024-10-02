@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Alcohol
   icon: {fileID: 21300000, guid: 5d41d5df4207b6b45931590f8e9d0909, type: 3}
   price: 20
-  happiness: 15
+  happiness: 5
   physicalHealth: -20
-  mentalHealth: -15
+  mentalHealth: -18

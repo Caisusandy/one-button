@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Spa Day
   icon: {fileID: 21300000, guid: 6dbd078f6cd72ef4c9ca7938c452c791, type: 3}
   price: 60
-  happiness: 5
+  happiness: 0
   physicalHealth: 5
-  mentalHealth: 25
+  mentalHealth: 10

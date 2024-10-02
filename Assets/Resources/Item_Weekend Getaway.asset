@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Weekend Getaway
   icon: {fileID: 21300000, guid: 7cbc544bb2b299c43a21eec5d0f9231c, type: 3}
   price: 75
-  happiness: 35
+  happiness: 10
   physicalHealth: 0
-  mentalHealth: 15
+  mentalHealth: 0

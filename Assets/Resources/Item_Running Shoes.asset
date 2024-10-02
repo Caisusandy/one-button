@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Running Shoes
   icon: {fileID: 21300000, guid: 4c56b49ff99b28b41a0ae216186ebbde, type: 3}
   price: 30
-  happiness: 5
-  physicalHealth: 15
+  happiness: -10
+  physicalHealth: 5
   mentalHealth: 0

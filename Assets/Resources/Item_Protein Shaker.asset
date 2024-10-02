@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6ae198d8dbf2e4343ac4e46de8c44849, type: 3}
   price: 35
   happiness: -10
-  physicalHealth: 15
+  physicalHealth: 5
   mentalHealth: 0

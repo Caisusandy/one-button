@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Pogo Stick
   icon: {fileID: 21300000, guid: 989186140e7eea74a93962146fee68b1, type: 3}
   price: 250
-  happiness: 15
-  physicalHealth: 15
-  mentalHealth: 10
+  happiness: 0
+  physicalHealth: 10
+  mentalHealth: 0

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Therapy
   icon: {fileID: 21300000, guid: 157d1d0958226a54386d990a7923d9f3, type: 3}
   price: 100
-  happiness: 15
+  happiness: -10
   physicalHealth: 0
-  mentalHealth: 40
+  mentalHealth: 10

@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Mattress
   icon: {fileID: 21300000, guid: f6e55abd503010146bda660f3831e2eb, type: 3}
   price: 150
-  happiness: 10
-  physicalHealth: -20
-  mentalHealth: 20
+  happiness: 0
+  physicalHealth: -25
+  mentalHealth: 10
