@@ -538,7 +538,7 @@ MonoBehaviour:
   decreasing: 0.25
   minTime: 5
   startMoney: 300
-  salary: 80
+  salary: 250
   moneyText: {fileID: 1337941306}
   scoreText: {fileID: 1429349421}
   timerText: {fileID: 1353039408}
