@@ -16,18 +16,12 @@ namespace OneButton
 
         public Color selectColor;
         public Color unselectColor;
-        //public bool isItem1;
-        //public bool isItem2;
-        //public bool isSkip;
-        //private bool item1_selected = true;
-        //private bool item2_selected = false;
-        //private bool skip_selected = false; 
 
         public void Setup(ItemData item)
         {
             itemData = item;
             image.sprite = item.icon;
-            nameText.text = $"{item.itemName}\n{item.Description}";
+            nameText.text = $"{item.itemName} ${item.price}\n{item.Description}";
         }
 
         public void Toggle(int currentSelection)
@@ -43,25 +37,5 @@ namespace OneButton
                 bg.enabled = false;
             }
         }
-
-        //void ShowSelected()
-        //{
-        //    if (item1_selected && isItem1)
-        //    {
-        //        image.color = Color.cyan;
-        //    }
-        //    else if (item2_selected && isItem2)
-        //    {
-        //        image.color = Color.cyan;
-        //    }
-        //    else if (skip_selected && isSkip)
-        //    {
-        //        image.color = Color.cyan;
-        //    }
-        //    else
-        //    {
-        //        image.color = Color.gray;
-        //    }
-        //}
     }
 }
