@@ -20,7 +20,7 @@ namespace OneButton
         private void Start()
         {
             // set text content here
-            roundsText.text = $"Survived for {gameInstance.turn} rounds";
+            roundsText.text = $"Survived for {gameInstance.turn - 1} rounds";
             physHealthScoreText.text = $"Physical Health: {finalScore.Physical}% remaining";
             mentHealthScoreText.text = $"Mental Health: {finalScore.Mental}% remaining";
             happinessScoreText.text = $"Happiness: {finalScore.Happiness}% remaining";

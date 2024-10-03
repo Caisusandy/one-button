@@ -859,11 +859,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Each round you will have 10 seconds to choose between 2 items to buy. These
-    items will affect your <b>physical health</b>, <b>mental health</b> and/or <b>happiness</b>
-    in different ways. Every 3 rounds you will get a $80 salary and all of your needs
-    will decrease. Your goal is to maintain a healthy lifestyle (which includes not
-    going bankrupt).
+  m_text: Each round you will have no more than <b>5</b> seconds to choose between
+    <b>2</b> items to buy. These items will affect your <b>physical health</b>, <b>mental
+    health</b> and/or <b>happiness</b> in different ways. Every <b>3</b> rounds you
+    will get a <b>$250</b> salary and all of your needs will decrease. Your goal
+    is to maintain a healthy lifestyle (which includes not going bankrupt).
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
