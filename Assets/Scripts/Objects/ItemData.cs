@@ -49,7 +49,7 @@ namespace OneButton
 
         private string Sign(int value)
         {
-            return value > 0 ? "+" : "-";
+            return (value > 0 ? "+" : "") + value.ToString();
         }
     }
 }
